@@ -1,1 +1,2 @@
-This is Space. https://space.io/
+Space
+Location locked communities
