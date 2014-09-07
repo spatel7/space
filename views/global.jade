@@ -1,0 +1,34 @@
+doctype
+html(lang='en')
+  head
+    meta(name='viewport' content='width=device-width, inital-scale=1, maximum-scale=1')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    block meta
+
+    link(rel='stylesheet' href='/css/global.css' type='text/css')
+    link(rel='shortcut icon' href='/images/favicon.ico')
+    block styles
+
+  body
+    div.container
+      div.holder
+        div.main
+          h1 Welcome to <a href='/spaces' style='color: black;'>Space</a>
+          block content
+
+    script.
+      WebFontConfig = {
+        google: { families: [ 'Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    script(src='http://code.jquery.com/jquery-1.11.0.min.js' type='text/javascript')
+    block scripts

@@ -1,0 +1,22 @@
+extends global
+
+block meta
+  title Create a Space
+
+block styles
+  link(rel='stylesheet' href='/css/create.css' type='text/css')
+
+block content
+  h3.subname Location based communities
+  div.posts
+    div.title
+      span.exp Create a space
+      a.write(href='/spaces') Cancel
+    div.content
+      form(id='spaceform')
+        input.field(type='text' id='shortname' placeholder='unique shortname')
+        input.field(type='text' id='name' placeholder='name of space')
+      a#save.write(href='#') Create
+
+block scripts
+  script(src='/js/create.js' type='text/javascript')

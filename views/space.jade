@@ -1,0 +1,30 @@
+extends global
+
+block meta
+  title Welcome to Space
+
+block styles
+  link(rel='stylesheet' href='/css/space.css' type='text/css')
+
+
+block scripts
+  script(src='/js/space.js' type='text/javascript')
+
+block content
+  h3.subname #{space.name}
+  div.posts
+    div.title
+      span.exp ##{space.shortname}
+      a.write(href='/spaces/#{space.shortname}/write') Write post
+    div.content
+      if !posts.length
+        span There are no posts here.
+      else
+        each post in posts
+          div#postBar
+            span <strong>#{post.user}</strong> - #{moment(post.published).fromNow()}
+            br
+            span #{post.content}
+            if post.link
+              br
+              a(href='#{post.link}' target='_blank') #{post.link}

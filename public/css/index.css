@@ -1,0 +1,17 @@
+#spaceBar {
+  width: 280px;
+  margin-bottom: 5px;
+  padding: 10px;
+  float:left;
+}
+
+#spaceBar:hover {
+  background-color: rgba(255,255,255,0.4);
+  border: 1px solid #c0c0c0;
+  padding: 9px;
+}
+
+a.space {
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,30 @@
+extends global
+
+block meta
+  title Welcome to Space
+
+block styles
+  link(rel='stylesheet' href='/css/index.css' type='text/css')
+
+block content
+  h3.subname Location based communities
+  div.posts
+    div.title
+      span.exp Spaces you are in 
+        span#accuracy
+      a.write(href='/create') Create one
+    div.content#allspaces
+      span Loading spaces based on your location...
+      //
+        if !spaces.length
+          p There are no spaces here.
+        else
+          each space in spaces
+            a.space(href='/spaces/#{space.shortname}')
+              div#spaceBar
+                span <strong>##{space.shortname}</strong> - #{space.posts.length} posts
+                br
+                span #{space.name}
+
+block scripts
+  script(src='/js/spaces.js' type='text/javascript')

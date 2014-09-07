@@ -1,0 +1,28 @@
+extends global
+
+block meta
+  title Space - Write
+
+block styles
+  link(rel='stylesheet' href='/css/write.css' type='text/css')
+
+block content
+  h3.subname #{space.name}
+  div.posts
+    div.title
+      span.exp Write for ##{space.shortname}
+      a.write(href='/spaces/#{space.shortname}') Cancel
+    div.content
+      form(id='postform')
+        input.field(type='text' id='user' placeholder='username')
+        textarea#post
+        input.field(type='text' id='link' placeholder='http://')
+
+      a#save.write(href='#') Save
+
+block scripts
+  script.
+    var Locals = {
+        shortname: '#{space.shortname}'
+    }
+  script(src='/js/write.js' type='text/javascript')
